@@ -1,0 +1,11 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+
+PREFIX ex: <http://example.org/>
+#OR @prefix ex: <http://example.org/> .
+
+ex:Alice    foaf:firstName   "Alice"^^xsd:string  ;
+    foaf:age        "21"^^xsd:integer   ; 
+    foaf:knows      ex:Bob    .
+
+ex:Bob      foaf:firstName  "Bob"^^xsd:string   .
