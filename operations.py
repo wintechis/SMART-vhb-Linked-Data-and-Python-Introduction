@@ -9,3 +9,8 @@
 # G1 & G2 intersection (triples in both graphs)
 
 # G1 ^ G2 xor (triples in either G1 or G2, but not in both)
+
+#len
+
+# dataset
+# conjunctivegraph
