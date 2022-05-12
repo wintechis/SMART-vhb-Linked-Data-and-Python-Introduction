@@ -19,7 +19,7 @@ PREFIX ex: <http://example.org/>
 
 ex:Alice    foaf:firstName   "Alice"^^xsd:string  ;
     foaf:age        "21"^^xsd:integer   ; 
-    foaf:knows      ex:Bob    .
+    foaf:knows      ex:Bob    , _:b0 .
 
 ex:Bob      foaf:firstName  "Bob"^^xsd:string   .
 '''
@@ -36,8 +36,11 @@ knows       = rdflib.URIRef('http://xmlns.com/foaf/0.1/knows')
 
 ## Define objects
 a_name  = rdflib.Literal('Alice')
-b_name  = rdflib.Literal('Bob')
+b_name  = rdflib.Literal('Bob', lang='en')
 _21     = rdflib.Literal(21)
+
+## Define blank nodes
+b0 = rdflib.BNode()
 
 
 #################################################
@@ -51,7 +54,9 @@ g.add((alice, first_name, a_name))
 g.add((alice, age, _21))
 # ex:Alice    foaf:knows        ex:Bob    .
 g.add((alice, knows, bob))
-# ex:Bob      foaf:firstName   "Bob"^^xsd:string .
+# ex:Alice    foaf:knows        _:b0    .
+g.add((alice, knows, b0))
+# ex:Bob      foaf:firstName   "Bob"@en .
 g.add((bob, first_name, b_name))
 
 

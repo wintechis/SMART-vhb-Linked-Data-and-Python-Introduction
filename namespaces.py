@@ -7,7 +7,7 @@
 
 
 #import required classes from rdflib package
-from rdflib import URIRef,Literal, Graph, FOAF, XSD
+from rdflib import URIRef,Literal, BNode, Graph, FOAF, XSD
 from rdflib.namespace import Namespace
 
 #string with RDF triples in Turtle
@@ -20,7 +20,7 @@ PREFIX ex: <http://example.org/>
 
 ex:Alice    foaf:firstName   "Alice"^^xsd:string  ;
     foaf:age        "21"^^xsd:integer   ; 
-    foaf:knows      ex:Bob    .
+    foaf:knows      ex:Bob    , _:b0 .
 
 ex:Bob      foaf:firstName  "Bob"^^xsd:string   .
 '''
@@ -41,6 +41,9 @@ a_name  = Literal('Alice', datatype=XSD.string)
 b_name  = Literal('Bob', datatype=XSD.string)
 _21     = Literal(21, datatype=XSD.integer)
 
+## Define blank nodes
+b0 = BNode('b0')
+
 #################################################
 ## Add triples to graph
 
@@ -52,6 +55,8 @@ g.add((alice, FOAF.firstName, a_name))
 g.add((alice, FOAF.age, _21))
 # ex:Alice    foaf:knows        ex:Bob    .
 g.add((alice, FOAF.knows, bob))
+# ex:Alice    foaf:knows        _:b0    .
+g.add((alice, FOAF.knows, b0))
 # ex:Bob      foaf:firstName   "Bob"^^xsd:string .
 g.add((bob,   FOAF.firstName, b_name))
 
