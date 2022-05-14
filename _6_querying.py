@@ -7,6 +7,8 @@ from rdflib.plugins.sparql import prepareQuery
 #################################################
 ## Add triples to graph (see https://data.nobelprize.org/resource/laureate/1 for more information)[Wilhelm Conrad Röntgen]
 g = Graph().parse('https://data.nobelprize.org/store/6/metadata/3743?recursive=laureate&format=text/turtle')
+g = Graph().parse('https://data.nobelprize.org/store/6/metadata/3981?recursive=nobelprize&format=text/turtle')
+g.serialize('conrad.ttl', format='ttl')
 
 
 #################################################
