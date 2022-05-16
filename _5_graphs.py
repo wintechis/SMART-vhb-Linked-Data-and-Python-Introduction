@@ -1,11 +1,24 @@
+##############################################################################################
+## Course   : Linked Data and Python: Introduction                                          ##
+## Section  : Graphs                                                                        ##
+## Authors  : Christian Fleiner, Andreas Harth                                              ##
+## See more : https://github.com/wintechis/SMART-vhb-Linked-Data-and-Python-Introduction    ##
+##                                                                                          ##
+## Learing Goals:                                                                           ##
+## - Apply graph operations and methods                                                     ##
+## - Understand the difference between Graph, ConjunctiveGraph and Dataset                  ##
+##############################################################################################
+
+##################################################
+## Import classes from library
 from rdflib import ConjunctiveGraph, Dataset, Graph, URIRef
 
 ##################################################
+## Define RDF data and load to graphs
 a = '''
 PREFIX ex: <http://example.org/> 
 
 ex:alice    ex:knows    ex:bob. 
-
 '''
 
 b = '''
@@ -13,14 +26,12 @@ PREFIX ex: <http://example.org/>
 
 ex:alice    ex:knows    ex:bob . 
 ex:bob      ex:knows    ex:charlie, ex:daisy . 
-
 '''
 
 c = '''
 PREFIX ex: <http://example.org/> 
 
 ex:charlie    ex:knows    ex:bob, ex:daisy . 
-
 '''
 
 g_a = Graph().parse(data=a, format='ttl')
@@ -43,13 +54,13 @@ g_c = Graph().parse(data=c, format='ttl')
 # for i, triple in enumerate(g_a + g_c, start=1):
 #     print(i, [x.n3() for x in triple])
 
-# in place union / addition
+## in place union / addition
 # g_b += g_a
 # print('============ In Place Addition ============')
 # for i, triple in enumerate(g_b, start=1):
 #     print(i, [x.n3() for x in triple])
 
-# return new graph with difference (triples in G1, not in G2)
+# # return new graph with difference (triples in G1, not in G2)
 # print('============ Difference ============')
 # for i, triple in enumerate(g_b - g_a, start=1):
 #     print(i, [x.n3() for x in triple])
@@ -71,15 +82,20 @@ g_c = Graph().parse(data=c, format='ttl')
 #     print(i, [x.n3() for x in triple])
 
 
+# ################################################
+# # Isomorphism (accurate when no BNodes)
+# g_a2 = Graph().parse(data=a)
+# print('============ Isomorphism ============')
+# print('Isomorphic', g_a.isomorphic(g_a2), 'Comparison', g_a == g_a2)
+
+
 #################################################
 ## Conjunctive Graph
-
 
 # g = ConjunctiveGraph()
 # g.parse(data=a)
 # g.parse(data=b)
 # g.parse(data=c)
-
 
 # print('============ CG: Identifiers ============')
 # for i, x in enumerate(g.contexts()):
@@ -98,12 +114,10 @@ g_c = Graph().parse(data=c, format='ttl')
 # g_b = Graph(identifier=URIRef('http://b.org/graph.ttl')).parse(data=b, format='ttl')
 # g_c = Graph(identifier=URIRef('http://c.org/graph.ttl')).parse(data=c, format='ttl')
 
-
 # d = Dataset()
 # d.add_graph(g_a)
 # d.add_graph(g_b)
 # d.add_graph(g_c)
-
 
 # print('============ Dataset: Identifiers ============')
 # for i, x in enumerate(d.contexts()):
@@ -118,8 +132,8 @@ g_c = Graph().parse(data=c, format='ttl')
 
 # print('============ Dataset: Graph by Identifier ============')
 # for g in d.graphs():
-#     if g.identifier == URIRef('http://a.org/graph.ttl'):
-#         for i, triple in enumerate(c, start=1):
+#     if g.identifier == URIRef('http://c.org/graph.ttl'):
+#         for i, triple in enumerate(g, start=1):
 #             print(i, [x.n3() for x in triple])
 
 
