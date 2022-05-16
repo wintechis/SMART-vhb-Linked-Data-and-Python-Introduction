@@ -53,38 +53,8 @@ def is_compatible(a: SolutionMapping, b: SolutionMapping) -> bool:
 
 #################################################
 ## data copied from _8_algebra
-data8 = """
-PREFIX dbo: <http://dbpedia.org/ontology/> 
-PREFIX foaf: <http://xmlns.com/foaf/0.1/> 
-PREFIX nobel: <http://data.nobelprize.org/terms/> 
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 
-PREFIX laureate: <http://data.nobelprize.org/resource/laureate/>
-PREFIX university: <http://data.nobelprize.org/resource/university/>
-PREFIX year: <http://data.nobelprize.org/resource/nobelprize/Physics/>
-
-laureate:1000 rdfs:label "Klaus Hasselmann" ;
-    nobel:nobelPrize year:2021 ;
-    dbo:affiliation university:Max_Planck_Institute_for_Meteorology ;
-    foaf:gender "male" .
-
-laureate:1001 rdfs:label "Giorgio Parisi" ;
-    nobel:nobelPrize year:2021 ;
-    dbo:affiliation university:Sapienza_University_of_Rome ;
-    foaf:gender "male" .
-
-laureate:988 rdfs:label "Roger Penrose" .
-    
-laureate:989 rdfs:label "Reinhard Genzel" .
-   
-laureate:990 rdfs:label "Andrea Ghez" ;
-    foaf:gender "female" .
-
-laureate:999 rdfs:label "Syukuro Manabe" ;
-    nobel:nobelPrize year:2021 ;
-    dbo:affiliation university:Princeton_University .
-"""
-g = Graph().parse(data=data8, format='ttl')
+g = Graph().parse('algebra.ttl', format='ttl')
 
 
 #################################################
