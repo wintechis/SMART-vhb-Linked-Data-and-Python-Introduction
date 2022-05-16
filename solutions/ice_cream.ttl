@@ -1,0 +1,6 @@
+PREFIX ex: <http://example.org/>
+
+ex:alice ex:lies ex:ice_cream .
+
+ex:ice_cream ex:is  ex:cold ;
+    ex:flavour  'vanilla' .

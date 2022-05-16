@@ -4,7 +4,7 @@
 ## Authors  : Christian Fleiner, Andreas Harth                                              ##
 ## See more : https://github.com/wintechis/SMART-vhb-Linked-Data-and-Python-Introduction    ##
 ##                                                                                          ##
-## Learing Goals:                                                                           ##
+## Learning Goals:                                                                          ##
 ## - Parse data from string, file, stream and the Web                                       ##
 ## - Run dummy server with Live server extension                                            ##
 ##############################################################################################

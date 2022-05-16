@@ -4,7 +4,7 @@
 ## Authors  : Christian Fleiner, Andreas Harth                                              ##
 ## See more : https://github.com/wintechis/SMART-vhb-Linked-Data-and-Python-Introduction    ##
 ##                                                                                          ##
-## Learing Goals:                                                                           ##
+## Learning Goals:                                                                          ##
 ## - Use known namespaces and own created namespaces                                        ##
 ## - (Un)bind namespaces from/with graph                                                    ##
 ##############################################################################################

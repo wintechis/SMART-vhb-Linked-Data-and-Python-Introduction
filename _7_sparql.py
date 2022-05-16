@@ -1,23 +1,34 @@
+##############################################################################################
+## Course   : Linked Data and Python: Introduction                                          ##
+## Section  : SPARQL Queries / Requests                                                     ##
+## Authors  : Christian Fleiner, Andreas Harth                                              ##
+## See more : https://github.com/wintechis/SMART-vhb-Linked-Data-and-Python-Introduction    ##
+##                                                                                          ##
+## Learning Goals:                                                                          ##
+## - Execute SPARQL queries on graphs                                                       ##
+## - Prepare SPARQL queries with the prepareQuery function                                  ##
+##############################################################################################
+
+##################################################
+## Import classes from library
 from rdflib import Graph, RDFS
-from rdflib.namespace import Namespace
 from rdflib.query import Result, ResultRow
 from rdflib.plugins.sparql import prepareQuery
 
 #################################################
-## Add triples to graph (see https://data.nobelprize.org/resource/laureate/1 for more information)[Wilhelm Conrad Röntgen]
+## Load graph (see https://data.nobelprize.org/resource/laureate/1 for more information)[Wilhelm Conrad Röntgen]
 g = Graph().parse('https://data.nobelprize.org/store/6/metadata/3743?recursive=laureate&format=text/turtle')
-
 
 #################################################
 ## Querying local graph
-qres = g.query('''
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# qres = g.query('''
+#     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-    SELECT ?s ?o
-    WHERE {
-        ?s  rdfs:label  ?o .
-    }
-    ''')
+#     SELECT ?s ?o
+#     WHERE {
+#         ?s  rdfs:label  ?o .
+#     }
+#     ''')
 
 #################################################
 ## Querying local graph with prepareQuery
@@ -33,9 +44,9 @@ qres = g.query('''
 
 
 #################################################
-## Querying remote SPARQL endpoints (unstable)
-#g = Graph()
-#qres = g.query(
+## Querying remote SPARQL endpoints (unstable) (example from: https://rdflib.readthedocs.io/en/stable/intro_to_sparql.html)
+# g = Graph()
+# qres = g.query(
 #    """
 #    SELECT ?s
 #    WHERE {
@@ -45,13 +56,14 @@ qres = g.query('''
 #    }
 #    LIMIT 3
 #    """
-#)
+# )
 
-assert isinstance(qres, Result)
-for row in qres:
-    #iterating will yield lists of ResultRow objects
-    assert isinstance(row, ResultRow)
-    print(f'<{"> rdfs:label ".join(row.asdict().values())} .')
+# assert isinstance(qres, Result)
+# print('============ SPARQL SELECT Result ============')
+# for i, row in enumerate(qres, start=1):
+#     #iterating will yield lists of ResultRow objects
+#     assert isinstance(row, ResultRow)
+#     print(i, [x.n3() for x in row])
 
 #################################################
 # SPARQL ASK
@@ -63,7 +75,7 @@ for row in qres:
 #         ?s  rdfs:label  ?o .
 #     }
 #     ''')
-
+# print('============ SPARQL ASK Result ============')
 # print(qres.askAnswer)
 
 
@@ -78,27 +90,21 @@ for row in qres:
 #         ?s  rdfs:label  ?o .
 #     }
 #     ''')
-
-#for triple in qres:
-#    print(triple)
-
-
-##########################
-## Print readable triples
-# for triple in qres:
-#     print(*map(lambda x: x.n3(), triple))
+# print('============ SPARQL CONSTRUCT Result ============')
+# for i, triple in enumerate(qres, start=1):
+#    print(i, [x.n3() for x in triple])
 
 
 
-##########################
+#################################################
 ## Add CONSTRUCTED triples 
 ## to new graph and print
 # g2 = Graph()
 # for triple in qres:
 #     g2.add(triple)
 
-# for s,p,o in g2:
-#     print(s,p,o)
+# for i, triple in enumerate(g2, start=1):
+#     print(i, [x.n3() for x in triple])
 
 
 #################################################

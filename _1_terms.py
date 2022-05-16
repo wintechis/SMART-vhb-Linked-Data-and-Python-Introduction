@@ -4,7 +4,7 @@
 ## Authors  : Christian Fleiner, Andreas Harth                                              ##
 ## See more : https://github.com/wintechis/SMART-vhb-Linked-Data-and-Python-Introduction    ##
 ##                                                                                          ##
-## Learing Goals:                                                                           ##
+## Learning Goals:                                                                          ##
 ## - Understand basic terms of the RDFLib                                                   ##
 ## - Create a graph with triples                                                            ##
 ##############################################################################################
@@ -66,8 +66,8 @@ ex:Bob      foaf:firstName  "Bob"^^xsd:string   .
 # g.add((bob, first_name, b_name))
 
 
-#################################################
-## Print serialized graph to terminal
+################################################
+# Print serialized graph to terminal
 # print('============ Graph as String ============')
 # print(g.serialize(format='turtle'))
 

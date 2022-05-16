@@ -4,7 +4,7 @@
 ## Authors  : Christian Fleiner, Andreas Harth                                              ##
 ## See more : https://github.com/wintechis/SMART-vhb-Linked-Data-and-Python-Introduction    ##
 ##                                                                                          ##
-## Learing Goals:                                                                           ##
+## Learning Goals:                                                                          ##
 ## - Serialize to string or to file                                                         ##
 ## - Serialize in multiple formats                                                          ##
 ##############################################################################################
@@ -35,6 +35,6 @@ g = Graph().parse(source='D:/python_projects/ldpy_intro/example.ttl')
 #    f.write(data)
 
 
-###########################################################
-# See 99_formats.py for available Serializers and Parsers #
-###########################################################
+#############################################################
+# See formats.py/.txt for available Serializers and Parsers #
+#############################################################

@@ -4,7 +4,7 @@
 ## Authors  : Christian Fleiner, Andreas Harth                                              ##
 ## See more : https://github.com/wintechis/SMART-vhb-Linked-Data-and-Python-Introduction    ##
 ##                                                                                          ##
-## Learing Goals:                                                                           ##
+## Learning Goals:                                                                          ##
 ## - Apply graph operations and methods                                                     ##
 ## - Understand the difference between Graph, ConjunctiveGraph and Dataset                  ##
 ##############################################################################################
