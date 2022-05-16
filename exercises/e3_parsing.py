@@ -1,29 +1,36 @@
+##############################################################################################
+## Course   : Linked Data and Python: Introduction                                          ##
+## Section  : Parsing - Excercise                                                           ##
+## Authors  : Christian Fleiner, Andreas Harth                                              ##
+## See more : https://github.com/wintechis/SMART-vhb-Linked-Data-and-Python-Introduction    ##
+##                                                                                          ##
+## Exercises:                                                                               ##
+## - 3.1 Parse data from file                                                               ##
+## - 3.2 Parse data from Web resource                                                       ##
+##############################################################################################
+
 from rdflib import Graph
 
-data3 = """
-    PREFIX ex: <http://example.org/>
+######################################################################
+##  3.1 Create a graph with the content of 'exercises/ice_cream.ttl ##
+######################################################################
 
-    ex:alice ex:lies ex:ice_cream .
-
-    ex:ice_cream ex:is  ex:cold ;
-        ex:flavour  'vanilla' .
-    """
-
-##########################################################
-## Create a turtle file with the content given in data3
 def parse_from_file():
     g = Graph()
-    try:
-        g.parse('exercises/ice_cream.ttl')
-    except FileNotFoundError as e:
-        print(f'{e}\nCreate a file "ice_cream.ttl" in folder "exercises" or change the filepath!')
+    # ↓↓↓ START TO CODE BELOW ↓↓↓
+
+
     return g
 
-##########################################################
-##  Parse a Web resource in the format 'application/rdf+xml' (xml) instead of 'turtle'
+####################################################################################
+##  3.2 Parse the Web resource at 'uri' in the format 'application/rdf+xml' (xml) ##
+####################################################################################
+
 def parse_from_web():
+    uri = 'https://data.nobelprize.org/store/6/metadata/1930?recursive=nobelprize&format=application/rdf+xml'
     g = Graph()
-    g.parse('https://data.nobelprize.org/store/6/metadata/1930?recursive=nobelprize&format=application/rdf+xml', format='xml')
+    # ↓↓↓ START TO CODE BELOW ↓↓↓
+
     return g
 
 

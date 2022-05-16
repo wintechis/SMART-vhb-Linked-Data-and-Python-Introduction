@@ -1,6 +1,14 @@
-##########################
-## Algebra.py
-##########################
+##############################################################################################
+## Course   : Linked Data and Python: Introduction                                          ##
+## Section  : SPARQL Algebra - Excercise                                                    ##
+## Authors  : Christian Fleiner, Andreas Harth                                              ##
+## See more : https://github.com/wintechis/SMART-vhb-Linked-Data-and-Python-Introduction    ##
+##                                                                                          ##
+## Exercises:                                                                               ##
+## - 8.1 Create JOIN function                                                               ##
+## - 8.2 Create UNION function                                                              ##
+##############################################################################################
+
 # ↓↓↓ START TO CODE BELOW ↓↓↓
 from typing import Iterator
 import rdflib
@@ -16,25 +24,31 @@ class ResultSet (Iterator[SolutionMapping]):
     pass
 
 
-#################################################
-## Create dummy classes for improved type hinting
+##########################################################################
+##  8.2 Create a JOIN operation function (do not use evaluate.evalJoin) ##
+##########################################################################
 def join(𝛀_l: ResultSet, 𝛀_r: ResultSet) -> ResultSet:
     𝛀_l, 𝛀_r = list(𝛀_l), list(𝛀_r)
     𝛀 = []
-    for 𝝁_l  in 𝛀_l:
-        for 𝝁_r in 𝛀_r:
-            if is_compatible(𝝁_l, 𝝁_r):
-                𝛀.append({**𝝁_l, **𝝁_r})
+    #the is_compatible function might be useful
+    # ↓↓↓ START TO CODE BELOW ↓↓↓
+
+
+
     return 𝛀
 
 
-
-
-#################################################
-## Create dummy classes for improved type hinting
+############################################################################
+##  8.2 Create a UNION operation function (do not use evaluate.evalUnion) ##
+############################################################################
 def union(𝛀_l: ResultSet, 𝛀_r: ResultSet) -> ResultSet:
-    return iter([*𝛀_l,  *𝛀_r])
+    #↓↓↓ START TO CODE BELOW ↓↓↓
+    return
 
+
+############################################################################
+##  BEGIN: DO NOT CHANGE THE CODE                                         ##
+############################################################################
 
 #################################################
 ## Support Functions copied from _8_algebra
@@ -100,6 +114,10 @@ bgp1.algebra = algebra.BGP(triples=[tp1, tp2])
 bgp2 = algebra.BGP(triples=[tp3])
 bgp2.algebra = algebra.BGP(triples=[tp3])
 𝛀_r = evaluate.evalQuery(g, bgp2, initBindings={})
+
+############################################################################
+##  END: DO NOT CHANGE THE CODE                                           ##
+############################################################################
 
 
 if __name__ == '__main__':
