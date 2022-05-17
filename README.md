@@ -51,8 +51,6 @@ pip install rdflib==6.1.1
 
 Congratulations! You have finished the installation
 
-
-
 ## Questions, Remarks and Issues
 * If you did not understand a code snippet, let us know by creating a GitHub Issue where the title starts with "Q:"  
 * If you are missing any code snippets for understanding specific classes or functions or have a good idea about a new exercise, create a GitHub Issue where the title starts with "R:"
@@ -60,7 +58,11 @@ Congratulations! You have finished the installation
 
 
 ## Not enough of RDF and SPARQL?
-If you are looking for a simple framework to practice RDF and SPARQL, but do not want to deepdive into one of the open knowledge graphs (DBpedia, WikiData, ...), the [RDF Training and Demonstration Framework (RDeF)](https://github.com/wintechis/RDeF) might be a project, you want to check out. RDeF is a Python framework for creating interactive stories based on RDF triples. In stories, players build their own knowledge base from RDF triples hidden in scenes and uncover new findings by querying this knowledge base with SPARQL queries. RDeF is mainly built upon [Kivy](https://kivy.org/#home) and [RDFLib](https://rdflib.readthedocs.io/en/stable/#getting-started).  
+If you are looking for a simple framework to practice RDF and SPARQL, but do not want to deepdive into one of the open knowledge graphs (DBpedia, WikiData, ...), the [RDF Training and Demonstration Framework (RDeF)](https://github.com/wintechis/RDeF) might be a project, you want to check out. RDeF is a Python framework for creating interactive stories based on RDF triples. In stories, players build their own knowledge base from RDF triples hidden in scenes and uncover new findings by querying this knowledge base with SPARQL queries. RDeF is mainly built upon [Kivy](https://kivy.org/#home) and [RDFLib](https://rdflib.readthedocs.io/en/stable/#getting-started).
+
+## Maintenance
+This repository is maintained by the [Chair of Technical Information Systems](https://www.ti.rw.fau.de/), Friedrich-Alexander-Universität Erlangen-Nürnberg.
 
 ## License
 See [LICENSE](LICENSE) for details.
+
