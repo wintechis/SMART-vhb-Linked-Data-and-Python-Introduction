@@ -25,11 +25,9 @@ This repository is especially designed for Bavarian students who are also permit
 
 ## Installation
 Open your favoured terminal and clone the repository. Due to the long name, we recommend you give it a new name like "ldpy_intro".
-
 ```console
 git clone https://github.com/wintechis/SMART-vhb-Linked-Data-and-Python-Introduction.git ldpy_intro
 ```
-
 Change directory to the repo folder.
 ```console
 cd ldpy_intro
@@ -39,7 +37,6 @@ Create a new virtual environment within this folder.
 python -m venv env
 ```
 Activate the virtual environment (Windows example).
-
 ```console
 env/scripts/activate
 ```
@@ -48,8 +45,21 @@ Install version 6.1.1 of the rdflib. You can use also the more recent one, howev
 ```console
 pip install rdflib==6.1.1
 ```
+Congratulations! You have finished the installation.
 
-Congratulations! You have finished the installation
+## Exercises, Solutions and Tests
+In folder "exercises", exercise files for each section can be found adhering to the enumeration. In folder "solutions", exemplary code is provided to solve each exercise. You can run tests that compare your solution (in the exercise file) with the given solution (in the solution file). To run all tests, type in your console:
+
+```console
+python -m unittest -v tests
+```
+
+If you want to run only the tests for exercise 1, type:
+
+```console
+python -m unittest -v tests.E1
+```
+
 
 ## Questions, Remarks and Issues
 * If you did not understand a code snippet, let us know by creating a GitHub Issue where the title starts with "Q:"  

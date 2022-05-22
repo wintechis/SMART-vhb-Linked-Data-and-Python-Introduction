@@ -16,7 +16,7 @@ from rdflib import Graph
 
 #################################################
 ## Parse local file
-g = Graph().parse(source='D:/python_projects/ldpy_intro/example.ttl')
+g = Graph().parse(source='example.ttl')
 
 
 ################################################
