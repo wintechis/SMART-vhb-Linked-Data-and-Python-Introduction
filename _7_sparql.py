@@ -129,3 +129,15 @@ g = Graph().parse('https://data.nobelprize.org/store/6/metadata/3743?recursive=l
 #     elif qres.type == 'CONSTRUCT': pass
 #     elif qres.type == 'DESCRIBE': pass
 #     elif qres.type == 'SELECT': pass
+
+#################################################
+## UPDATE Graph
+g = Graph()
+g.update('''
+PREFIX ex: <http://example.org/>
+INSERT DATA {
+    ex:alice   ex:knows     ex:bob .
+}
+
+''')
+print(g.serialize(format='ttl'))
